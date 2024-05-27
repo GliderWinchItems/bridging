@@ -8,6 +8,11 @@
 #ifndef __CAN_BRIDGE_FILTER
 #define __CAN_BRIDGE_FILTER
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+
 #define CBFNxNMAX 5     // 5x5 max size of matrix tables
 #define CBFSORTMIN 12   // ID arrays shorter than this are not 'bsearch'd
 #define CBFARRAYMAX 512 // An ID array larger than this is suspect.
