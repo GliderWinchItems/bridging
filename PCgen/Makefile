@@ -7,7 +7,7 @@ C_SOURCES += ../PC/can-bridge-filter.c
 C_SOURCES += ../PC/can-bridge-filter-lookup.c 
 C_SOURCES += ../PC/CANid-hex-bin.c 
 
-C_SOURCES += test.c
+#C_SOURCES += test.c
 
 executable = PCgen
 
