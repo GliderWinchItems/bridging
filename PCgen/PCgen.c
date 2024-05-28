@@ -4,7 +4,9 @@
 * Board              : 
 * Description        : Generate C code for inclusion in STM32 routine
 *******************************************************************************/
-
+/*
+make && ./PCgen --file ../filters/CANbridge3x3.txt test.c
+*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

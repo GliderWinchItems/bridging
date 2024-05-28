@@ -32,7 +32,7 @@ while the input is being read. Upon completion of an in:out pair memory is
 #include <malloc.h>
 
 #include "common_can.h"
-#include "../../../GliderWinchCommons/embed/svn_common/trunk/db/gen_db.h"
+//#include "../../../GliderWinchCommons/embed/svn_common/trunk/db/gen_db.h"
 #include "can-bridge-filter.h"
 
 //#define DBGINPT // Print IDs extracted from input file

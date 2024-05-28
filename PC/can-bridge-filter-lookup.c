@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <malloc.h>
 
-#include "common_can.h"
+//#include "common_can.h"
 #include "can-bridge-filter.h"
 #include "can-bridge-filter-lookup.h"
 #include "CANid-hex-bin.h"

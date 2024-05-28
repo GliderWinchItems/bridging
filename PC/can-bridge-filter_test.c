@@ -4,6 +4,9 @@
 * Board              : 
 * Description        : Test can-bridge-filter
 *******************************************************************************/
+/*
+make && ./can-bridge-filter_test --file ../filters/CANbridge3x3.txt
+*/
 
 #include <stdio.h>
 #include <string.h>
@@ -11,7 +14,7 @@
 #include <malloc.h>
 
 #include "common_can.h"
-#include "../../../GliderWinchCommons/embed/svn_common/trunk/db/gen_db.h"
+//#include "../../../GliderWinchCommons/embed/svn_common/trunk/db/gen_db.h"
 #include "can-bridge-filter.h"
 #include "can-bridge-filter-lookup.h"
 #include "can-bridge-filter_test.h"
@@ -23,10 +26,11 @@ FILE* fp;
 /* Hard code test input for test. */
 struct INID
 {
-	uint32_t id;
-	uint8_t in;
-	uint8_t out;
+	uint32_t id; // CAN id to test against tables
+	uint8_t in;  // Input connection (1-N)
+	uint8_t out; // Output connection (1-N)
 };
+/* Hard-code input IDs that are tested against file tables. */
 struct INID inid[] = 
 {
 	{0x00400000, 1, 3},
@@ -38,7 +42,7 @@ struct INID inid[] =
 	{0x12345678, 2, 3},
 	{0x12345678, 3, 1},
 	{0x12345678, 3, 3},
-	{       0x0, 0, 0} /* END */
+	{       0x0, 0, 0} /* ZERO sets the END */
 };
 
 /*******************************************************************************
@@ -75,7 +79,6 @@ int main(int argc, char **argv)
 	printf("...END n EXIT TEST...\n");
 	return 0;
 }
-
 /*******************************************************************************
  * void can_bridge_filter_test(struct CBF_TABLES* pcbf);
  * @brief   : Run some tests
