@@ -19,5 +19,8 @@ int can_bridge_filter_lookup(uint8_t* pmsg, struct CBF_TABLES* pcbf, uint8_t in,
  * @param   : in = output connection (0 - (N-1)), (not 1 - N)!
  * @return  : 0 = not copy; 1 = copy;
 *******************************************************************************/
+void printid(uint8_t* p);
+/* @brief   : Print CAN id chars within CAN msg
+*******************************************************************************/
 
 #endif

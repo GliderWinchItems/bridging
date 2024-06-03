@@ -1,5 +1,4 @@
 #
-# Makefile.  Generated from Makefile.in by configure.
 #
 sourcefiles = $(srcdir)/can-bridge-filter_test.c \
 	$(srcdir)/can-bridge-filter.c \
