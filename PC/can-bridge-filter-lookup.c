@@ -81,7 +81,6 @@ int can_bridge_filter_lookup(uint8_t* pmsg, struct CBF_TABLES* pcbf, uint8_t in,
 		    return 0; // No match; Do not copy in->out
 		}
 	}
-
 	/* *********** Type = Block-on-match *************** */
 	if (pbnn->size_1c == 0)
 	{ // Here, *******1c lookup table has no entries (PASS ALL) ********
@@ -145,7 +144,8 @@ int can_bridge_filter_lookup(uint8_t* pmsg, struct CBF_TABLES* pcbf, uint8_t in,
 //p1c = pbnn->p1c;
 //for(int kk=0; kk<pbnn->size_1c; kk++)			
 //	printf("B1 %2i %08X\n",kk,*(p1c+kk));
-
+		if (pbnn->size_1c == 0)
+	    	return 1; // Empty BOM table
 
 		// binary search 1 column table
 		p1c = pbnn->p1c;
@@ -172,6 +172,8 @@ int can_bridge_filter_lookup(uint8_t* pmsg, struct CBF_TABLES* pcbf, uint8_t in,
 //p2c = pbnn->p2c;
 //for(int kk=0; kk<pbnn->size_2c; kk++)			
 //	printf("DD %2i %08X %08X\n",kk,(p2c+kk)->in,(p2c+kk)->out);
+	    if (pbnn->size_2c == 0)
+			return 1;
 
 		// binary search 2 column table
 		p2c = pbnn->p2c;

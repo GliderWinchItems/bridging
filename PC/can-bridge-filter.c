@@ -560,7 +560,9 @@ static int extract_id(uint32_t* pid, char* p)
 //printf("%4i:%s",pt->linectr,pt->buf);
       switch (pt->buf[0]) // First char of line identifies line type
       {
-      case ' ': // Skip. Assume a blank line
+      case ' ': // 
+         printf("ERR: space on 1st char:");printatline(pt);
+         return NULL;
       case '#': // Skip comment line
       case '\n': // Skip blank line
          break;
